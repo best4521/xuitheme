@@ -124,12 +124,18 @@ MIRRORS=("$REPO_RAW/assets"
   "https://cdn.jsdelivr.net/gh/best4521/xuitheme@main/assets"
   "https://fastly.jsdelivr.net/gh/best4521/xuitheme@main/assets"
   "https://gcore.jsdelivr.net/gh/best4521/xuitheme@main/assets")
+# probe mirrors once (fast) and put the first reachable one first
+for i in "${!MIRRORS[@]}"; do
+  if curl -fsS -o /dev/null --connect-timeout 5 --max-time 10 "${MIRRORS[$i]}/index.html" 2>/dev/null; then
+    best="${MIRRORS[$i]}"; unset 'MIRRORS[$i]'; MIRRORS=("$best" "${MIRRORS[@]}"); break
+  fi
+done
 fetch(){  # fetch <file>
   local f="$1" m
   for m in "${MIRRORS[@]}"; do
     local h="${m#https://}"; h="${h%%/*}"
     echo -n "    $f  <- $h ... "
-    if curl -fsSL --connect-timeout 8 --max-time 60 --retry 2 --retry-delay 1 "$m/$f" -o "$WEB/$f.tmp" && [ -s "$WEB/$f.tmp" ]; then
+    if curl -fsSL --connect-timeout 8 --max-time 60 --retry 1 --retry-delay 1 "$m/$f" 2>/dev/null -o "$WEB/$f.tmp" && [ -s "$WEB/$f.tmp" ]; then
       mv -f "$WEB/$f.tmp" "$WEB/$f"; echo "ok"; return 0
     fi
     echo "failed"
