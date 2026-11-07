@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#060a18">
+<title>Nexino VPN – اطلاعات اشتراک</title>
+<link rel="icon" href="/_sp/logo.png">
+<style>
+@font-face{font-family:'Vazirmatn';src:url('/_sp/Vazirmatn.woff2') format('woff2');font-weight:100 900;font-display:swap}
+:root{
+  --bg:#060a18; --bg2:#0a1126; --card:#0f1830; --card2:#121d3a; --line:#1e2b4d; --mut:#8a97b8; --txt:#eaf0ff;
+  --b:#2f6bff; --c:#22d3ee; --ok:#22c55e; --bad:#ef4444;
+  --grad:linear-gradient(135deg,#2f6bff,#22d3ee);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+html{overflow-x:hidden}
+body{font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+.bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  background:
+   radial-gradient(55% 38% at 80% 6%,rgba(47,107,255,.28),transparent 70%),
+   radial-gradient(45% 30% at 5% 30%,rgba(34,211,238,.12),transparent 70%),
+   radial-gradient(70% 45% at 50% 105%,rgba(47,107,255,.22),transparent 70%),
+   linear-gradient(180deg,#060a18 0%,#0a1126 50%,#060a18 100%)}
+.bgfx::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(140,180,255,.18) 1px,transparent 1px);background-size:26px 26px;mask-image:linear-gradient(180deg,#000,transparent 60%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 60%)}
+.bgfx svg{position:absolute;width:140%;left:-20%}
+.wrap{position:relative;z-index:1;max-width:620px;margin:0 auto;padding:22px 16px 40px}
+
+/* hero */
+.hero{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.hero .txt{flex:1;min-width:0}
+.hero h1{color:#fff;font-size:clamp(26px,7vw,40px);font-weight:900;line-height:1.25}
+.hero h1 b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#b4c1e0;font-size:13.5px;margin-top:8px;line-height:1.8}
+.shield{width:clamp(96px,28vw,150px);flex:none;filter:drop-shadow(0 0 26px rgba(47,107,255,.6))}
+.brand{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:900;font-size:15px;letter-spacing:.3px;direction:ltr;background:rgba(15,24,48,.75);border:1px solid rgba(34,211,238,.35);border-radius:999px;padding:5px 14px 5px 6px;margin-bottom:10px}
+.brand img{width:24px;height:24px}
+.brand b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* main card */
+.card{position:relative;background:linear-gradient(180deg,rgba(18,29,58,.92),rgba(15,24,48,.92));border:1px solid var(--line);border-radius:26px;padding:44px 16px 16px;box-shadow:0 24px 60px rgba(0,0,0,.55),0 0 0 1px rgba(47,107,255,.08),inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+.badge{position:absolute;top:-22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;white-space:nowrap;
+  background:var(--grad);color:#fff;font-weight:800;font-size:16px;padding:9px 22px 9px 14px;border-radius:999px;box-shadow:0 10px 26px rgba(47,107,255,.45),inset 0 1px 0 rgba(255,255,255,.3)}
+.badge .dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center}
+.badge.off{background:linear-gradient(135deg,#ef4444,#f97316);box-shadow:0 10px 26px rgba(239,68,68,.4)}
+.grid{display:grid;grid-template-columns:1fr 1.15fr;gap:16px;align-items:start;direction:ltr}
+.grid>*{direction:rtl;min-width:0}
+.qrbox{position:relative;background:#fff;border-radius:20px;padding:14px;box-shadow:0 0 0 1px rgba(34,211,238,.25),0 12px 30px rgba(47,107,255,.25);aspect-ratio:1;display:grid;place-items:center;cursor:pointer}
+.qrbox canvas{width:100%;height:auto;image-rendering:pixelated}
+.qrbox i{position:absolute;width:30px;height:30px;border:3px solid var(--c);filter:drop-shadow(0 0 5px rgba(34,211,238,.7))}
+.qrbox i:nth-child(1){top:-7px;left:-7px;border-right:0;border-bottom:0;border-radius:9px 0 0 0}
+.qrbox i:nth-child(2){top:-7px;right:-7px;border-left:0;border-bottom:0;border-radius:0 9px 0 0}
+.qrbox i:nth-child(3){bottom:-7px;left:-7px;border-right:0;border-top:0;border-radius:0 0 0 9px}
+.qrbox i:nth-child(4){bottom:-7px;right:-7px;border-left:0;border-top:0;border-radius:0 0 9px 0}
+.qrcol .hint{text-align:center;color:var(--mut);font-size:12px;margin-top:12px}
+.subbtn{margin-top:12px;width:100%;border:0;border-radius:14px;padding:11px;font:inherit;font-weight:800;font-size:14px;color:#fff;cursor:pointer;background:var(--grad);box-shadow:0 8px 20px rgba(47,107,255,.4)}
+.rows{list-style:none;display:flex;flex-direction:column;gap:5px}
+.rows li{display:flex;align-items:center;gap:10px;background:rgba(10,17,38,.7);border:1px solid rgba(30,43,77,.7);border-radius:12px;padding:9px 12px;min-height:42px;min-width:0}
+.rows svg{width:21px;height:21px;flex:none;color:var(--c)}
+.rows .k{font-weight:700;font-size:14px;white-space:nowrap;flex:none;color:#cbd6f0}
+.rows .v{margin-right:auto;font-size:13.5px;direction:ltr;text-align:left;font-variant-numeric:tabular-nums;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pill{margin-right:auto;display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.5);color:#4ade80;font-size:13px;font-weight:700;padding:3px 13px;border-radius:999px}
+.pill.off{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.5);color:#f87171}
+.bar{height:8px;border-radius:9px;background:#1e2b4d;overflow:hidden;margin:4px 2px}
+.bar span{display:block;height:100%;background:var(--grad);border-radius:9px;box-shadow:0 0 10px rgba(34,211,238,.5);transition:width .8s}
+.bar.warn span{background:linear-gradient(90deg,#f59e0b,#ef4444)}
+
+/* configs */
+.box{margin-top:18px;background:linear-gradient(180deg,rgba(18,29,58,.92),rgba(15,24,48,.92));border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:0 18px 44px rgba(0,0,0,.45);min-width:0}
+.box h2{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:900;color:#fff}
+.box h2 small{font-weight:600;color:var(--mut);font-size:13.5px}
+.box h2 svg{width:24px;height:24px;color:var(--c)}
+.cfg{display:flex;align-items:stretch;gap:8px;margin-top:12px;min-width:0}
+.cfg .t{flex:1;min-width:0;background:rgba(6,10,24,.6);border:1px solid var(--line);border-radius:14px;padding:10px 12px;direction:ltr;text-align:left;font:13px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;color:#a9b6d6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}
+.cfg .t b{display:block;font:700 12px 'Vazirmatn',sans-serif;color:var(--c);direction:rtl;text-align:right;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cfg.open .t{white-space:normal;word-break:break-all}
+.cbtn{flex:none;width:54px;border:0;border-radius:14px;cursor:pointer;color:#fff;display:grid;place-items:center;background:var(--grad);box-shadow:0 8px 18px rgba(47,107,255,.4)}
+.cbtn svg{width:22px;height:22px}
+.empty{color:var(--mut);font-size:13px;margin-top:10px}
+
+/* apps */
+.apps{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.app{position:relative;min-width:0}
+.abtn{width:100%;display:flex;align-items:center;justify-content:center;gap:12px;border:0;cursor:pointer;color:#fff;font:inherit;font-size:19px;font-weight:800;padding:15px 18px;border-radius:18px;
+  background:var(--grad);box-shadow:0 12px 30px rgba(47,107,255,.4),inset 0 1px 0 rgba(255,255,255,.3)}
+.app.ios .abtn{background:rgba(15,24,48,.95);box-shadow:0 12px 30px rgba(0,0,0,.45),inset 0 0 0 1px #2a3557}
+.abtn svg.lg{width:28px;height:28px}
+.abtn .sep{width:1px;height:26px;background:rgba(255,255,255,.35)}
+.abtn .ch{width:18px;height:18px;transition:transform .2s;opacity:.85}
+.app.open .abtn .ch{transform:rotate(180deg)}
+.app .cap{text-align:center;color:var(--mut);font-size:12px;margin-top:8px}
+.menu{display:none;position:absolute;z-index:5;top:64px;left:0;right:0;background:#0f1830;border:1px solid var(--line);border-radius:18px;padding:6px;box-shadow:0 20px 44px rgba(0,0,0,.6)}
+.app.open .menu{display:block}
+.menu a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:11px 12px;border-radius:12px;color:var(--txt);text-decoration:none;font-size:14px;font-weight:700}
+.menu a span{font-size:11.5px;color:var(--mut);font-weight:500}
+.menu a:hover,.menu a:active{background:rgba(47,107,255,.14)}
+.menu .hd{font-size:11px;color:var(--c);padding:6px 12px 2px}
+
+.foot{margin:28px auto 0;display:flex;align-items:center;justify-content:center;gap:12px;color:#cbd6f0;font-size:13.5px;
+  background:rgba(15,24,48,.75);border:1px solid rgba(34,211,238,.25);border-radius:999px;padding:12px 22px;width:max-content;max-width:100%;box-shadow:0 0 30px rgba(47,107,255,.18)}
+.foot img{width:30px;height:30px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,30px);opacity:0;background:#0f1830;color:#fff;border:1px solid rgba(34,211,238,.5);padding:10px 20px;border-radius:999px;font-size:14px;transition:.25s;z-index:20;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.load{color:#b4c1e0;text-align:center;padding:40px 0}
+
+@media (max-width:520px){
+  .card{padding:40px 12px 12px}
+  .grid{grid-template-columns:1fr}
+  .qrcol{max-width:260px;margin:0 auto;width:100%}
+  .apps{grid-template-columns:1fr}
+  .abtn{font-size:17px}
+}
+</style>
+</head>
+<body>
+<div class="bgfx">
+  <svg viewBox="0 0 1200 400" style="top:-40px" preserveAspectRatio="none"><defs><linearGradient id="w1" x1="0" x2="1"><stop offset="0" stop-color="#2f6bff" stop-opacity="0"/><stop offset=".6" stop-color="#2f6bff" stop-opacity=".35"/><stop offset="1" stop-color="#2f6bff" stop-opacity=".05"/></linearGradient></defs>
+    <path d="M0 260 C300 120 600 330 1200 80" stroke="url(#w1)" stroke-width="3" fill="none"/><path d="M0 300 C350 170 650 360 1200 130" stroke="url(#w1)" stroke-width="1.5" fill="none"/></svg>
+  <svg viewBox="0 0 1200 400" style="bottom:-30px" preserveAspectRatio="none"><path d="M0 220 C300 380 700 120 1200 300 L1200 400 L0 400Z" fill="#2f6bff" fill-opacity=".10"/><path d="M0 250 C320 400 720 150 1200 330" stroke="url(#w1)" stroke-width="3" fill="none"/></svg>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <img class="shield" src="/_sp/logo.png" alt="Nexino VPN">
+    <div class="txt">
+      <div class="brand"><img src="/_sp/logo.png" alt="">Nexino <b>VPN</b></div>
+      <h1>اطلاعات <b>اشتراک</b> شما</h1>
+      <p>مشخصات و وضعیت اشتراک شما در این صفحه قابل مشاهده است.</p>
+    </div>
+  </header>
+
+  <main id="main"><div class="load">در حال دریافت اطلاعات…</div></main>
+
+  <div class="foot">
+    <img src="/_sp/logo.png" alt="">
+    <span><b style="direction:ltr;display:inline-block">Nexino VPN</b> • اتصال امن و پایدار • پشتیبانی سریع</span>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="/_sp/qrious.min.js"></script>
+<script>
+(function(){
+const I = {
+  id:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M9 3v3h6V3M8 11h8M8 15h5"/></svg>',
+  st:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg>',
+  dl:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 01-.6-9.96A6 6 0 0118 9a4.5 4.5 0 01-1 8.9"/><path d="M12 11v9M8.5 16.5L12 20l3.5-3.5"/></svg>',
+  ul:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 01-.6-9.96A6 6 0 0118 9a4.5 4.5 0 01-1 8.9"/><path d="M12 20v-9M8.5 14.5L12 11l3.5 3.5"/></svg>',
+  us:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 20v-4M9 20v-7M13 20v-9M17 20v-12M3 10l5-4 4 3 7-6"/></svg>',
+  db:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>',
+  rm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="16" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01"/></svg>',
+  exp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 10v4l2 1.5M10 3h4M18.5 6.5l1.5-1.5"/></svg>',
+  chk:'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  x:'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 14a4.5 4.5 0 006.4 0l3-3a4.5 4.5 0 00-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 00-6.4 0l-3 3a4.5 4.5 0 006.4 6.4l1-1"/></svg>',
+  copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="13" height="17" rx="2.5"/><path d="M9.5 4V3h6v1M9.5 10h6M9.5 14h4"/></svg>',
+  and:'<svg class="lg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18c0 .55.45 1 1 1h1v3.5a1.5 1.5 0 003 0V19h2v3.5a1.5 1.5 0 003 0V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8A1.5 1.5 0 002 9.5v7a1.5 1.5 0 003 0v-7A1.5 1.5 0 003.5 8zm17 0A1.5 1.5 0 0019 9.5v7a1.5 1.5 0 003 0v-7A1.5 1.5 0 0020.5 8zm-4.97-5.84l1.3-1.3a.5.5 0 00-.7-.7l-1.48 1.48A5.96 5.96 0 0012 1c-.96 0-1.86.23-2.66.63L7.85.15a.5.5 0 00-.7.7l1.31 1.31A5.98 5.98 0 006 7h12a5.98 5.98 0 00-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/></svg>',
+  ios:'<svg class="lg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>',
+  ch:'<svg class="ch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>'
+};
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function fmtB(b){ if(!b||b<0) return '0 MB'; const u=['B','KB','MB','GB','TB']; let i=0; while(b>=1024&&i<u.length-1){b/=1024;i++} return b.toFixed(i<2?0:2)+' '+u[i]; }
+function fmtD(ms){ try{ return new Date(ms).toLocaleString('fa-IR-u-nu-latn',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}); }catch(e){ return new Date(ms).toLocaleString(); } }
+function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('show'),1800); }
+function copy(t){
+  const ok=()=>toast('کپی شد ✓');
+  if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(t).then(ok,()=>fb()); } else fb();
+  function fb(){ const a=document.createElement('textarea'); a.value=t; a.style.position='fixed'; a.style.opacity='0'; document.body.appendChild(a); a.select(); try{document.execCommand('copy');ok()}catch(e){toast('کپی نشد')} a.remove(); }
+}
+function linkName(l,i){
+  try{
+    if(l.startsWith('vmess://')){ const j=JSON.parse(atob(l.slice(8))); if(j.ps) return j.ps; }
+    const h=l.indexOf('#'); if(h>-1) return decodeURIComponent(l.slice(h+1));
+  }catch(e){}
+  return 'کانفیگ '+(i+1);
+}
+
+async function load(){
+  const path = location.pathname.replace(/\/+$/,'');
+  const res = await fetch(path, {headers:{'X-Raw':'1','Accept':'text/html'}, cache:'no-store'});
+  if(!res.ok) throw new Error(res.status);
+  const doc = new DOMParser().parseFromString(await res.text(),'text/html');
+  const el = doc.getElementById('subscription-data');
+  if(!el) throw new Error('nodata');
+  const g = (k,d='') => el.getAttribute(k) ?? d;
+  const ta = doc.getElementById('subscription-links');
+  let lo = parseInt(g('data-lastonline','0'),10)||0; if(lo && lo<1e10) lo*=1000;
+  return {
+    sid: g('data-sid'), subUrl: location.origin+path,
+    down: parseInt(g('data-downloadbyte','0'),10)||0, up: parseInt(g('data-uploadbyte','0'),10)||0,
+    total: parseInt(g('data-totalbyte','0'),10)||0,
+    expire: (parseInt(g('data-expire','0'),10)||0)*1000, last: lo,
+    links: ((ta && (ta.value||ta.textContent))||'').split('\n').map(s=>s.trim()).filter(Boolean)
+  };
+}
+
+function render(d){
+  const used=d.down+d.up, now=Date.now();
+  const remain = d.total>0 ? Math.max(d.total-used,0) : -1;
+  const delayed = d.expire<0;
+  const expired = d.expire>0 && d.expire<now;
+  const over = d.total>0 && used>=d.total;
+  const active = !expired && !over;
+  const pct = d.total>0 ? Math.min(100, used/d.total*100) : 0;
+  let expTxt = d.expire===0 ? 'نامحدود' : delayed ? (Math.round(-d.expire/864e5)+' روز پس از اولین اتصال') : fmtD(d.expire);
+  if(d.expire>0 && !expired){ const days=Math.ceil((d.expire-now)/864e5); expTxt += '  ('+days+' روز)'; }
+  const row=(ic,k,v,cls='')=>`<li class="${cls}">${I[ic]}<span class="k">${k}</span><span class="v">${v}</span></li>`;
+
+  $('#main').innerHTML = `
+  <section class="card">
+    <div class="badge ${active?'':'off'}"><span>${active?'اشتراک فعال':(expired?'اشتراک منقضی شده':'حجم تمام شده')}</span><span class="dot">${active?I.chk:I.x}</span></div>
+    <div class="grid">
+      <div class="qrcol">
+        <div class="qrbox" id="qrb" title="کپی لینک اشتراک"><i></i><i></i><i></i><i></i><canvas id="qr"></canvas></div>
+        <button class="subbtn" id="subcp">کپی لینک اشتراک</button>
+        <div class="hint">QR را در اپ اسکن کنید یا لینک را کپی کنید</div>
+      </div>
+      <ul class="rows">
+        ${row('id','شناسه اشتراک',esc(d.sid))}
+        <li>${I.st}<span class="k">وضعیت</span><span class="pill ${active?'':'off'}">${active?I.chk+' فعال':I.x+' غیرفعال'}</span></li>
+        ${row('dl','دانلود شده',fmtB(d.down))}
+        ${row('ul','آپلود شده',fmtB(d.up))}
+        ${row('us','استفاده شده',fmtB(used))}
+        ${row('db','کل حجم',d.total>0?fmtB(d.total):'نامحدود')}
+        ${row('rm','مانده',remain<0?'نامحدود':fmtB(remain))}
+        ${d.total>0?`<div class="bar ${pct>85?'warn':''}"><span style="width:${pct.toFixed(1)}%"></span></div>`:''}
+        ${row('cal','آخرین اتصال',d.last>0?fmtD(d.last):'—')}
+        ${row('exp','انقضا در',esc(expTxt))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2>${I.link}کد اشتراک <small>(در صورت نیاز)</small></h2>
+    ${d.links.length? d.links.map((l,i)=>`
+      <div class="cfg"><div class="t" data-i="${i}"><b>${esc(linkName(l,i))}</b>${esc(l)}</div><button class="cbtn" data-c="${i}" aria-label="کپی">${I.copy}</button></div>`).join('')
+      : '<div class="empty">کانفیگی برای نمایش وجود ندارد.</div>'}
+  </section>
+
+  <section class="apps">
+    <div class="app and">
+      <button class="abtn">${I.and}<span class="sep"></span>Android${I.ch}</button>
+      <div class="cap">دانلود و نصب روی اندروید</div>
+      <div class="menu">
+        <div class="hd">افزودن خودکار اشتراک</div>
+        <a data-href="v2rayng://install-config?url={u}">v2rayNG <span>افزودن</span></a>
+        <a data-href="hiddify://import/{r}#{n}">Hiddify <span>افزودن</span></a>
+        <a data-href="v2box://install-sub?url={u}&name={n}">V2Box <span>افزودن</span></a>
+        <div class="hd">دانلود برنامه</div>
+        <a href="https://github.com/2dust/v2rayNG/releases/latest" target="_blank" rel="noopener">v2rayNG <span>GitHub</span></a>
+        <a href="https://play.google.com/store/apps/details?id=app.hiddify.com" target="_blank" rel="noopener">Hiddify <span>Google Play</span></a>
+      </div>
+    </div>
+    <div class="app ios">
+      <button class="abtn">${I.ios}<span class="sep"></span>iOS${I.ch}</button>
+      <div class="cap">دانلود و نصب روی iOS</div>
+      <div class="menu">
+        <div class="hd">افزودن خودکار اشتراک</div>
+        <a data-href="streisand://import/{r}#{n}">Streisand <span>افزودن</span></a>
+        <a data-href="v2box://install-sub?url={u}&name={n}">V2Box <span>افزودن</span></a>
+        <a data-href="sub://{b}">Shadowrocket <span>افزودن</span></a>
+        <div class="hd">دانلود برنامه</div>
+        <a href="https://apps.apple.com/app/streisand/id6450534064" target="_blank" rel="noopener">Streisand <span>App Store</span></a>
+        <a href="https://apps.apple.com/app/v2box-v2ray-client/id6446814690" target="_blank" rel="noopener">V2Box <span>App Store</span></a>
+      </div>
+    </div>
+  </section>`;
+
+  try{ new QRious({element:$('#qr'),value:d.subUrl,size:420,level:'M',background:'#ffffff',foreground:'#000000'}); }catch(e){}
+  $('#qrb').onclick=$('#subcp').onclick=()=>copy(d.subUrl);
+  document.querySelectorAll('.cbtn').forEach(b=>b.onclick=()=>copy(d.links[+b.dataset.c]));
+  document.querySelectorAll('.cfg .t').forEach(t=>t.onclick=()=>t.parentNode.classList.toggle('open'));
+  const rep={u:encodeURIComponent(d.subUrl), r:d.subUrl, n:encodeURIComponent(d.sid), b:btoa(d.subUrl)};
+  document.querySelectorAll('.menu a[data-href]').forEach(a=>a.href=a.dataset.href.replace(/\{(\w)\}/g,(_,k)=>rep[k]));
+  document.querySelectorAll('.app .abtn').forEach(b=>b.onclick=e=>{e.stopPropagation(); const p=b.parentNode, o=p.classList.contains('open'); document.querySelectorAll('.app').forEach(x=>x.classList.remove('open')); if(!o) p.classList.add('open');});
+  document.addEventListener('click',()=>document.querySelectorAll('.app').forEach(x=>x.classList.remove('open')));
+}
+
+load().then(render).catch(e=>{ $('#main').innerHTML='<div class="load">دریافت اطلاعات اشتراک ممکن نشد. لطفاً صفحه را دوباره باز کنید.</div>'; console.error(e); });
+})();
+</script>
+</body>
+</html>
