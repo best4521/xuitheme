@@ -120,10 +120,26 @@ cp "$DB" "$BK"; ok "Database backup: $BK"
 # ---------- assets ----------
 info "Downloading page assets..."
 mkdir -p "$WEB"
-for f in index.html logo.png qrious.min.js Vazirmatn.woff2; do
-  curl -fsSL "$REPO_RAW/assets/$f" -o "$WEB/$f.tmp" || die "Download failed: $f"
-  mv -f "$WEB/$f.tmp" "$WEB/$f"
+MIRRORS=("$REPO_RAW/assets"
+  "https://cdn.jsdelivr.net/gh/best4521/xuitheme@main/assets"
+  "https://fastly.jsdelivr.net/gh/best4521/xuitheme@main/assets"
+  "https://gcore.jsdelivr.net/gh/best4521/xuitheme@main/assets")
+fetch(){  # fetch <file>
+  local f="$1" m
+  for m in "${MIRRORS[@]}"; do
+    local h="${m#https://}"; h="${h%%/*}"
+    echo -n "    $f  <- $h ... "
+    if curl -fsSL --connect-timeout 8 --max-time 60 --retry 2 --retry-delay 1 "$m/$f" -o "$WEB/$f.tmp" && [ -s "$WEB/$f.tmp" ]; then
+      mv -f "$WEB/$f.tmp" "$WEB/$f"; echo "ok"; return 0
+    fi
+    echo "failed"
+  done
+  rm -f "$WEB/$f.tmp"; return 1
+}
+for f in index.html logo.png qrious.min.js; do
+  fetch "$f" || die "Could not download $f from GitHub or jsDelivr. Nothing in 3x-ui was changed."
 done
+fetch Vazirmatn.woff2 || info "Font download failed — page will use the system font."
 if [ -n "${LOGO_URL:-}" ]; then curl -fsSL "$LOGO_URL" -o "$WEB/logo.png" && ok "Custom logo applied."; fi
 ok "Assets installed in $WEB"
 
